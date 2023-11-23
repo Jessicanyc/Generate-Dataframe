@@ -43,7 +43,3 @@ Clone the repository and follow the instructions in the README.md file for guide
 **Contributions and License:**
 
 Contributions to improve or extend the functionality are welcome! The project is licensed under [specify the license, e.g., MIT License]. See the LICENSE file for more details.
-
----
-
-This introduction now highlights the tool's utility in machine learning contexts, emphasizing its role in model testing, data simulation, and rapid prototyping, which are key aspects for any data science and machine learning workflow.
