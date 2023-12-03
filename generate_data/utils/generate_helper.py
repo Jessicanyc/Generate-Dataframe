@@ -1,10 +1,14 @@
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.types import *
+from pyspark.sql.types import StringType, IntegerType, FloatType
 from pyspark.sql.functions import monotonically_increasing_id
 import random
+import uuid
 
 def generate_random_string(length=10):
     return ''.join(random.choice('abcdefghijklmnopqrstuvwxyz') for _ in range(length))
+
+def generate_uuid():
+    return str(uuid.uuid4())
 
 def generate_array_value(element_type, length, fixed_length):
     if element_type == StringType():

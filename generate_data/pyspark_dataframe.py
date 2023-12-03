@@ -55,7 +55,7 @@ class PySparkDataFrameFactory(DataFrameFactory):
             
         return spark.createDataFrame(data, column_schema)
     
-    def combine_dataframes(self, spark, dfs):
+    def combine_dataframes(self, dfs):
         # Add a unique ID column to each DataFrame
         dfs_with_id = [df.withColumn("id", monotonically_increasing_id()) for df in dfs]
         
