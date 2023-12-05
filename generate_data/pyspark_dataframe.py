@@ -1,4 +1,4 @@
-from generate_data.factory import DataFrameFactory
+from generate_data.dataframe_factory import DataFrameFactory
 from generate_data.utils.generate_helper import *
 from pyspark.sql.types import *
 import random
@@ -36,7 +36,7 @@ class PySparkDataFrameFactory(DataFrameFactory):
                     continue
                 value = random.choice(corner_cases)
             else:
-                if field_type in [StringType, IntegerType, FloatType]:
+                if field_type in [StringType, IntegerType, FloatType, BooleanType]:
                     value = generate_value_for_field(field_type, generation_type, specific_attr)
                 elif isinstance(field_type, ArrayType):
                     length = specific_attr.get('length', 3)

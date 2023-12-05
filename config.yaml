@@ -1,0 +1,78 @@
+fields:
+  - name: "id"
+    add: True
+    type: "StringType"
+    generation: "uuid"
+    
+  - name: "name"
+    add: True
+    type: "StringType"
+    generation: "random"
+    corner_cases: [null]  # List of corner case values
+    corner_case_probability: 0.1
+
+  - name: "age"
+    add: True
+    type: "IntegerType"
+    generation: "range"
+    value_range: [0, 99]   # Range of values for "age"
+    corner_cases: [null]   # List of corner case values (e.g., None)
+    corner_case_probability: 0.2
+
+  - name: "salary"
+    add: True
+    type: "FloatType"
+    generation: "fixed_length"
+    fixed_length: 2        # Specific attribute for "salary"
+    corner_cases: [null]   # List of corner case values
+    corner_case_probability: 0.0
+    
+  - name: "active"
+    add: True
+    type: "BooleanType"
+    generation: "random"
+    corner_cases: [null]   # List of corner case values
+    corner_case_probability: 0.1
+
+  - name: "features"
+    add: True
+    type: "ArrayType"
+    element_type: "BooleanType"
+    generation: "random"
+    list_details: 
+    length: 5            # Length of the boolean array
+    corner_cases: [[true, null, true, false, true], null]
+    corner_case_probability: 0.2
+
+  - name: "float_list"
+    add: True
+    type: "ArrayType"
+    element_type: "FloatType"
+    generation: "list_of_floats"
+    list_details: 
+      length: 3 #length of each list
+      fixed_length: 2      # length of each element
+    corner_cases: [null]   # List of corner case values
+    corner_case_probability: 0.15
+    
+  - name: "string_list"
+    add: False
+    type: "ArrayType"
+    element_type: "StringType"
+    generation: "list_of_strings"
+    list_details: 
+      length: 3 #length of each list
+      fixed_length: 2      # length of each element
+    corner_cases: ['']   # List of corner case values
+    corner_case_probability: 0.20
+    
+  - name: "integer_list"
+    add: False
+    type: "ArrayType"
+    element_type: "IntegerType"
+    generation: "list_of_integers"
+    list_details: 
+      length: 5 #length of each list
+      fixed_length: 3      # length of each element
+    corner_cases: [' ']   # List of corner case values
+    corner_case_probability: 0.20

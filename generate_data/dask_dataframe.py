@@ -1,4 +1,4 @@
-from generate_data.factory import DataFrameFactory
+from generate_data.dataframe_factory import DataFrameFactory
 from generate_data.pandas_dataframe import PandasDataFrameFactory as PDFF
 import dask.dataframe as dd
 
