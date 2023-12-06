@@ -1,5 +1,5 @@
-from generate_data.dataframe_factory import DataFrameFactory
-from generate_data.utils.generate_helper import *
+from generate_dataframe.dataframe_factory import DataFrameFactory
+from generate_dataframe.utils.generate_helper import *
 from pyspark.sql.types import *
 import random
 
